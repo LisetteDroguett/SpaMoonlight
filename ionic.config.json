@@ -1,0 +1,7 @@
+{
+  "name": "SpaMoonlight",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
