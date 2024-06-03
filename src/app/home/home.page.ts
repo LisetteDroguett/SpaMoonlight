@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,18 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  usuarioRec: any;
+
+  constructor(private router:Router, private activedRouter:ActivatedRoute, private sanitizer: DomSanitizer) {
+    this.activedRouter.queryParams.subscribe(param =>{
+      if(this.router.getCurrentNavigation()?.extras.state){
+        this.usuarioRec = this.router.getCurrentNavigation()?.extras?.state?.['nombreEnviado'];
+      }
+    })
+  }
+
+  getImagePath(imageName: string) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(`assets/icon/${imageName}`);
+  }
 
 }

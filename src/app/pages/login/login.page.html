@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Spa Moonlight</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <img [src]="getImagePath('LogoSpaMoonlight.png')" alt="iconoLogo" style="width: auto; height: auto;">
+  <h2 class="ion-text-center">Inicio</h2>
+  
+  <form #loginForm="ngForm" (ngSubmit)="irAlHome(loginForm)" >
+    <ion-list class="formulario">    
+      <ion-item>
+        <ion-label position="floating">Usuario</ion-label>
+        <ion-input type="text" [(ngModel)]="usuario" name="usuario" maxlength="30" required></ion-input>
+        <div *ngIf="loginForm.submitted && !usuario" class="error-message">El usuario es requerido</div>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="contrasenna" name="contrasenna" maxlength="6" required></ion-input>
+        <div *ngIf="loginForm.submitted && !contrasenna" class="error-message">La contraseña es requerida</div>
+      </ion-item>
+
+    </ion-list>
+    <ion-button id="mostrar-mensaje" expand="block" type="submit">Iniciar sesión</ion-button>
+  </form>
+
+  <ion-toast *ngIf="loginForm.valid" trigger="mostrar-mensaje" message="¡Bienvenido/a {{ usuario }}!" [duration]="4000"></ion-toast>
+</ion-content>
+
+<!--(click)="irAlHome()"-->

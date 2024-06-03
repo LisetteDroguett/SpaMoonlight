@@ -1,0 +1,27 @@
+ion-list {
+    background-color: transparent;
+}
+
+ion-item {
+    --background: #C37469;
+}
+
+ion-button {
+    --background: #BEA2E0;
+    --ripple-color: deeppink;
+}
+
+ion-title {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+h2 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+  

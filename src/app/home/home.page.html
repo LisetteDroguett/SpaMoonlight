@@ -1,20 +1,32 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-grid>
+      <ion-row>
+        <ion-title>
+          Spa Moonlight
+        </ion-title>
+        
+        <img [src]="getImagePath('LogoSpaMoonlight.png')" alt="iconoLogo" style="width: 50px; height: auto;">
+      </ion-row>
+    </ion-grid>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Spa Moonlight</ion-title>
     </ion-toolbar>
   </ion-header>
 
+  <h3>Hola {{ usuarioRec }}!</h3>
+
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <strong>Tu espacio para relajarte</strong>
+    <p>Spa Mujeres</p>
+  </div>  
 </ion-content>
+
+<ion-footer>
+  <ion-button shape="block" [routerLink]="['/agendamiento']">Ir a agendar</ion-button>
+</ion-footer>
