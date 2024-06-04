@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'promociones',
     loadChildren: () => import('./pages/promociones/promociones.module').then( m => m.PromocionesPageModule)
   },
+  {
+    path: 'registro',
+    loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
+  }
 ];
 
 @NgModule({

@@ -19,8 +19,12 @@ export class HomePage {
     })
   }
 
-  getImagePath(imageName: string) {
+  getLogoPath(imageName: string) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(`assets/icon/${imageName}`);
+  }
+
+  getImagePath(imageName: string) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(`assets/images/${imageName}`);
   }
 
 }

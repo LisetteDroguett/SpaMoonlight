@@ -11,8 +11,16 @@
     </ion-item>
     <ion-item>
       <ion-label>Fecha y hora: </ion-label>
-      <ion-datetime></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-datetime color="dark" locale="es-ES">
+        <span slot="time-label">Tiempo</span>
+      </ion-datetime>
     </ion-item>
   </ion-list>
   <ion-button expand="block" (click)="agendamiento()">Agendar hora</ion-button>
 </ion-content>
+
+<ion-footer>
+  <ion-button shape="block" [routerLink]="['/home']">Vovler al Home</ion-button>
+</ion-footer>

@@ -2,19 +2,11 @@ ion-title {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-ion-list {
-    background-color: transparent;
-}
-
-ion-item {
-    --background: #C37469;
+ion-footer {
+    background-color: #C37469;
 }
 
 ion-button {
     --background: #BEA2E0;
     --ripple-color: deeppink;
-}
-
-ion-footer {
-    background-color: #C37469;
 }

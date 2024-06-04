@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <img [src]="getImagePath('LogoSpaMoonlight.png')" alt="iconoLogo" style="width: auto; height: auto;">
+  <img [src]="getImagePath('LogoSpaMoonlight.png')" alt="iconoLogo" class="imagen">
   <h2 class="ion-text-center">Inicio</h2>
   
   <form #loginForm="ngForm" (ngSubmit)="irAlHome(loginForm)" >
@@ -26,6 +26,7 @@
   </form>
 
   <ion-toast *ngIf="loginForm.valid" trigger="mostrar-mensaje" message="¡Bienvenido/a {{ usuario }}!" [duration]="4000"></ion-toast>
+  <ion-button [routerLink]="['/registro']" expand="block">Registrarse</ion-button>
 </ion-content>
 
 <!--(click)="irAlHome()"-->

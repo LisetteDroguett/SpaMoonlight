@@ -6,11 +6,12 @@
           Spa Moonlight
         </ion-title>
         
-        <img [src]="getImagePath('LogoSpaMoonlight.png')" alt="iconoLogo" style="width: 50px; height: auto;">
+        <img [src]="getLogoPath('LogoSpaMoonlight.png')" alt="iconoLogo" style="width: 50px; height: auto;">
       </ion-row>
     </ion-grid>
   </ion-toolbar>
 </ion-header>
+<mat-progress-bar color="warn" mode="indeterminate"></mat-progress-bar>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
@@ -18,13 +19,21 @@
       <ion-title size="large">Spa Moonlight</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <h3>Hola {{ usuarioRec }}!</h3>
-
-  <div id="container">
-    <strong>Tu espacio para relajarte</strong>
-    <p>Spa Mujeres</p>
-  </div>  
+  <ion-grid>
+    <ion-row>
+      <h3>Hola {{ usuarioRec }}!</h3>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <img [src]="getImagePath('DetalleSpaMoonlight.png')" alt="imagenDetalle" style="width: auto; height: auto;">
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <h3>Tu espacio para relajarte</h3>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 
 <ion-footer>
