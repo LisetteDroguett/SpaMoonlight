@@ -22,19 +22,10 @@ export class LoginPage implements OnInit {
           nombreEnviado: this.usuario
         }
       }
+      localStorage.setItem('user',this.usuario);
       this.router.navigate(['/home'],navigationExtras);
-      /*this.navCtrl.navigateForward('/home');*/
     } 
   }
-
-  /*mostrarUsuario() {
-    let navigationExtras: NavigationExtras = {
-      state: {
-        nombreEnviado: this.usuario
-      }
-    }
-    this.router.navigate(['/home'],navigationExtras);
-  }*/
 
   getImagePath(imageName: string) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(`assets/icon/${imageName}`);

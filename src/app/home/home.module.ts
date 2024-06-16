@@ -6,6 +6,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { BotonComponent } from '../components/boton/boton.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     HomePageRoutingModule,
     MatProgressBarModule
   ],
-  declarations: [HomePage]
+  declarations: [HomePage, BotonComponent]
 })
 export class HomePageModule {}

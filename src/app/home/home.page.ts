@@ -10,6 +10,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class HomePage {
 
   usuarioRec: any;
+  user: any;
 
   constructor(private router:Router, private activedRouter:ActivatedRoute, private sanitizer: DomSanitizer) {
     this.activedRouter.queryParams.subscribe(param =>{
@@ -25,6 +26,10 @@ export class HomePage {
 
   getImagePath(imageName: string) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(`assets/images/${imageName}`);
+  }
+
+  ngOnInit() {
+    this.user = localStorage.getItem('user');
   }
 
 }
