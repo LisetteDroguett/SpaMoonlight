@@ -34,7 +34,11 @@ const routes: Routes = [
   {
     path: '**',
     loadChildren: () => import('./pages/not-found/not-found.module').then( m => m.NotFoundPageModule)
+  },  {
+    path: 'listado-usuarios',
+    loadChildren: () => import('./pages/listado-usuarios/listado-usuarios.module').then( m => m.ListadoUsuariosPageModule)
   }
+
 
 ];
 
