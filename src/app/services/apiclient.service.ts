@@ -1,30 +1,30 @@
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, retry } from 'rxjs';
-import { catchError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class ApiclientService {
 
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*'
+      /*'Access-Control-Allow-Origin': '*'*/
     })
   }
 
-  apiURL = 'http://192.168.0.6:3000';
+  apiURL = 'http://makeup-api.herokuapp.com/api/v1/products.json';
 
   constructor(private http:HttpClient) { }
 
   getProductos():Observable<any>{
-    return this.http.get(this.apiURL+'/products/').pipe(
+    return this.http.get(this.apiURL).pipe(
       retry(3)
     );
   }
-
+/*
   getProducto(id:any):Observable<any>{
     return this.http.get(this.apiURL+'/products/'+id).pipe(
       retry(3)
@@ -41,8 +41,8 @@ export class ApiclientService {
     return this.http.put(this.apiURL+'/products'+id,products,this.httpOptions).pipe(retry(3));
   }
 
-  deletePost(id:any):Observable<any>{
+  deleteProducto(id:any):Observable<any>{
     return this.http.delete(this.apiURL+'/products'+id,this.httpOptions);
   }
-
+*/
 }

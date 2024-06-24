@@ -12,12 +12,12 @@
     <ion-list class="formulario">    
       <ion-item>
         <ion-label position="floating">Usuario</ion-label>
-        <ion-input type="text" [(ngModel)]="usuario" name="usuario" maxlength="30" required></ion-input>
+        <ion-input type="text" [(ngModel)]="usuario" name="usuario" [ngModelOptions]="{standalone:true}" maxlength="30" required></ion-input>
         <div *ngIf="loginForm.submitted && !usuario" class="error-message">El usuario es requerido</div>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Contraseña</ion-label>
-        <ion-input type="password" [(ngModel)]="contrasenna" name="contrasenna" maxlength="6" required></ion-input>
+        <ion-input type="password" [(ngModel)]="contrasenna" name="contrasenna" [ngModelOptions]="{standalone:true}" maxlength="6" required></ion-input>
         <div *ngIf="loginForm.submitted && !contrasenna" class="error-message">La contraseña es requerida</div>
       </ion-item>
 

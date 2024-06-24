@@ -4,10 +4,22 @@
   </ion-toolbar>
 </ion-header>
 
+<br>
+
 <ion-content [fullscreen]="true">
+  <ion-title>Productos de belleza</ion-title>
   <ion-card>
     <ion-card-header>
-      
+      <ion-title>Nombre</ion-title>
     </ion-card-header>
+    <ion-item>
+      <ion-select placeholder="Seleccione producto" [(ngModel)]="selectedProduct">
+        <ion-select-option *ngFor="let x of products" [value]="x">{{x.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
   </ion-card>
 </ion-content>
+
+<ion-footer>
+  <ion-button shape="block" [routerLink]="['/home']">Volver al Home</ion-button>
+</ion-footer>

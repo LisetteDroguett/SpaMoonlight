@@ -24,5 +24,4 @@ export class RegistroPage implements OnInit {
     this.router.navigate(['/login']);
   }
 
-
 }

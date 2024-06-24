@@ -32,14 +32,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
   },
   {
-    path: '**',
-    loadChildren: () => import('./pages/not-found/not-found.module').then( m => m.NotFoundPageModule)
-  },  {
     path: 'listado-usuarios',
     loadChildren: () => import('./pages/listado-usuarios/listado-usuarios.module').then( m => m.ListadoUsuariosPageModule)
+  },
+  {
+    path: '**',
+    loadChildren: () => import('./pages/not-found/not-found.module').then( m => m.NotFoundPageModule)
   }
-
-
+  
 ];
 
 @NgModule({

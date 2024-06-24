@@ -10,8 +10,8 @@ import { NavController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 
-  usuario: any;
-  contrasenna: any;
+  usuario: string = '';
+  contrasenna: string = '';
 
   constructor(private navCtrl: NavController, private router: Router, private sanitizer: DomSanitizer) { }
 

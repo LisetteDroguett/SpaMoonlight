@@ -8,14 +8,10 @@ import { ApiclientService } from 'src/app/services/apiclient.service';
 })
 export class InformacionPage implements OnInit {
 
-  products:any={
-    id:null,
-    brand:"",
-    names:"",
-    product_type:""
-  };
+  products: any = [];
+  selectedProduct: any;
 
-  compareWith:any;
+  /*compareWith:any;*/
 
   constructor(private api: ApiclientService) { }
 
@@ -28,11 +24,18 @@ export class InformacionPage implements OnInit {
 
   getProductos(){
     this.api.getProductos().subscribe((data)=>{
-      this.products=data;
-      this.products.reverse();
+      if(Array.isArray(data)) {
+        this.products = data.reverse();
+      } else {
+        console.error('Expected an array of products, but got:', data);
+      }
+      /*this.products=data;*/
+      /*this.products.reverse();*/
+    }, (error) => {
+      console.error('Error fetching products:', error);
     });
   }
-
+/*
   guardarProducto(){
     if(this.products.id==null){    
       this.api.createProducto(this.products).subscribe(
@@ -60,7 +63,7 @@ export class InformacionPage implements OnInit {
 
   eliminarProducto(id:any){
     console.log("eliminar")
-    this.api.deletePost(this.products.id).subscribe(
+    this.api.deleteProducto(this.products.id).subscribe(
       success=>{
         console.log("Eliminado correctamente");
         this.getProductos();
@@ -70,5 +73,5 @@ export class InformacionPage implements OnInit {
       }
     )
   }
-
+*/
 }
