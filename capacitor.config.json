@@ -1,0 +1,6 @@
+{
+  "appId": "com.duocuc.spamoonlight",
+  "appName": "SpaMoonlight",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}
