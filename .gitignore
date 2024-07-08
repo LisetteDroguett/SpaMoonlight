@@ -61,6 +61,7 @@ yarn-error.log
 /.nx/cache
 /connect.lock
 /coverage
+/e2e
 /libpeerconnection.log
 testem.log
 /typings
